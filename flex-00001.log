@@ -1,0 +1,42 @@
+2021-06-10 16:44:28.231: 1. Start RunProcess by the passed Unit SN: flex-00001
+2021-06-10 16:44:28.233: 1.1- CertificateName=FPAV:DMNNT072:TLSclient
+    HttpWebResponseURL=https://sngcsmxprd.cisco.com/regional/cesium/apps/validate_product_attribute
+    conn.ConnectionString=Data Source=NSCM1654\FFMES2K17;Initial Catalog=FF2_8_19;Persist Security Info=True;User ID=190041;password=190041
+2021-06-10 16:44:28.234: 2. Call Stored procedure udpGetSerialNumberDetails to get request xml
+2021-06-10 16:44:28.308: 2.1 Call Stored procedure udpGetSerialNumberDetails successfully
+2021-06-10 16:44:28.309: 2.2 xmlRequest = <?xml version="1.0" encoding="utf-8"?>
+<FinalProductAttributeRequest xmlns="https://autotest.cisco.com/schemas/vmes/1.0/FinalProductAttributeValidationSchema">
+  <AutotestServiceRequestHeader xmlns="https://autotest.cisco.com/schemas/common/1.0/AutotestServicesCommonSchema">
+    <TrackingID>011</TrackingID>
+    <RequestTimestamp>2021-06-10T16:44:28+08:00</RequestTimestamp>
+    <RequestClientToken>RequestClientToken1</RequestClientToken>
+    <RequestApplianceID>RequestApplianceID1</RequestApplianceID>
+    <RequestEmails>PNG@flextronics.com</RequestEmails>
+    <RequestClientVersion>RequestClientVersion1</RequestClientVersion>
+    <RequestSiteID>1</RequestSiteID>
+  </AutotestServiceRequestHeader>
+  <FinalProductAttributeRequestBody>
+    <Order OrderNumber="">
+      <OrderLine LineNumber="" LineID="">
+        <RequestItem ItemNumber="" SerialNumber="flex-00001"/>
+      </OrderLine>
+    </Order>
+  </FinalProductAttributeRequestBody>
+</FinalProductAttributeRequest>
+2021-06-10 16:44:28.310: 3. Call the Cisco Web Service
+2021-06-10 16:44:28.310: 3.1 Verify the Certificates with below configurations:
+2021-06-10 16:44:28.353: Exception2=Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+2021-06-10 16:44:28.366: Exception2=   at System.Collections.CollectionBase.System.Collections.IList.get_Item(Int32 index)
+   at System.Security.Cryptography.X509Certificates.X509Certificate2Collection.get_Item(Int32 index)
+   at CiscoWSCallingTest.Form1.RunProcess(String SerialNumber, Int32 Station) in C:\00work\02sc-cfd\04-GP\Cisco\LSS\StandaloneApp\CiscoWebService\98217-05_1.1\SourceCode\CiscoWSCallingTest\Form1.vb:line 162
+2021-06-10 16:44:28.366: 3.3 Method=POST
+ContentType=application/xml
+2021-06-10 16:44:28.367: 3.4 To get the Web Service Response by calling the Cisco Web Service with below configuations:
+2021-06-10 16:44:28.642: WebException1=The request was aborted: Could not create SSL/TLS secure channel.
+2021-06-10 16:44:28.642: WebException2=   at System.Net.HttpWebRequest.GetResponse()
+   at CiscoWSCallingTest.Form1.RunProcess(String SerialNumber, Int32 Station) in C:\00work\02sc-cfd\04-GP\Cisco\LSS\StandaloneApp\CiscoWebService\98217-05_1.1\SourceCode\CiscoWSCallingTest\Form1.vb:line 186
+2021-06-10 16:44:28.643: 3.7 CiscoXMLResponse=
+2021-06-10 16:44:28.643: 4. Call Stored procedure udpWebServiceResponseDetails to parser and store the received response content in flexflow DB.
+2021-06-10 16:44:28.782: 4.1 Call Stored procedure udpWebServiceResponseDetails successfully
+2021-06-10 16:44:28.783: Completed RunProcess by the passed Unit SN: flex-00001
